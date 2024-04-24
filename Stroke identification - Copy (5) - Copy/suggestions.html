@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-Stroke Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        video, img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #28a745; /* Green color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .exercise-container {
+            margin-top: 20px;
+        }
+        .exercise-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .exercise-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Post-Stroke Exercises</h1>
+    
+    <video controls>
+        <source src="Assets/video 1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <h2>Introduction to Post-Stroke Exercises</h2>
+    <p>After experiencing a stroke, regular physical activity and exercises can play a crucial role in recovery and improving quality of life. Here are some important exercises:</p>
+    
+    <h2>Exercises for Stroke Recovery</h2>
+    <ul>
+        <li><strong>Range of Motion Exercises:</strong> Gentle stretching and movement exercises to improve flexibility and prevent muscle stiffness.</li>
+        <li><strong>Strength Training:</strong> Gradual strengthening exercises for affected muscles to regain strength and endurance.</li>
+        <li><strong>Balance and Coordination Exercises:</strong> Exercises focusing on improving balance and coordination to reduce the risk of falls.</li>
+        <li><strong>Aerobic Exercises:</strong> Low-impact aerobic activities like walking or cycling to improve cardiovascular health.</li>
+        <li><strong>Speech and Language Exercises:</strong> Exercises to improve speech and language abilities affected by stroke.</li>
+    </ul>
+  <video controls>
+        <source src="Assets/video 2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    
+    <p>Consult with a healthcare professional or physical therapist before starting any exercise program after a stroke.</p>
+
+    <h2>Arm Exercise Images</h2>
+    <div class="exercise-container" id="exerciseContainer"></div>
+
+    <!-- Next Page Button -->
+    <button id="nextButton" onclick="redirectToNextPage()">Next Page</button>
+
+    <script>
+        // Arm exercise data containing name, image path, and description
+        const armExercises = [
+            {
+                name: "Crawling Stretch",
+                imagePath: "Assets/Crawling stretch.jpeg",
+                description: "Perform a crawling-like stretch exercise to improve flexibility and mobility in the arms and shoulders."
+            },
+            {
+                name: "Seated Pushup",
+                imagePath: "Assets/Seated pushup.jpeg",
+                description: "Perform pushup motions while seated to strengthen arm muscles and improve upper body strength."
+            },
+            {
+                name: "Finger Walk",
+                imagePath: "Assets/Finger walk.jpeg",
+                description: "Practice finger walking exercises to enhance fine motor skills and finger dexterity."
+            },
+            {
+                name: "Wrist Motion",
+                imagePath: "Assets/Wrist motion.jpeg",
+                description: "Rotate your wrists clockwise and counterclockwise to improve wrist flexibility and range of motion."
+            },
+            {
+                name: "Elbow Weight Training",
+                imagePath: "Assets/Elbow weight training.jpeg",
+                description: "Use weights or resistance bands to perform elbow strengthening exercises for improved arm function."
+            }
+        ];
+
+        // Function to attach arm exercise images and descriptions to the DOM
+        function attachArmExerciseImages() {
+            const container = document.getElementById("exerciseContainer");
+
+            // Loop through each arm exercise
+            armExercises.forEach((exercise) => {
+                // Create elements for exercise display
+                const exerciseDiv = document.createElement("div");
+                exerciseDiv.className = "exercise-item";
+                const exerciseName = document.createElement("h3");
+                exerciseName.textContent = exercise.name;
+                const exerciseImg = document.createElement("img");
+                exerciseImg.src = exercise.imagePath;
+                exerciseImg.alt = exercise.name;
+                const exerciseDesc = document.createElement("p");
+                exerciseDesc.textContent = exercise.description;
+
+                // Append exercise elements to the container
+                exerciseDiv.appendChild(exerciseName);
+                exerciseDiv.appendChild(exerciseImg);
+                exerciseDiv.appendChild(exerciseDesc);
+                container.appendChild(exerciseDiv);
+            });
+        }
+
+        // Call the function to attach arm exercise images and descriptions when the page loads
+        attachArmExerciseImages();
+
+        // Function to redirect to the next page
+        function redirectToNextPage() {
+            // Specify the relative URL of the next page
+            const nextPageUrl = "Progress%20Tracker.html"; // Assuming the next page is in the same directory
+
+            // Redirect the user to the next page
+            window.location.href = nextPageUrl;
+        }
+    </script>
+</body>
+</html>

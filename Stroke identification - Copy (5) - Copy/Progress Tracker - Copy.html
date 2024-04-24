@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Patient Helper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        input[type="date"], input[type="text"], button {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #logForm, #progressLog, #exerciseSuggestion, #quoteOfTheDay {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #logList {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 0;
+        }
+
+        #logList li {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #exerciseMessage, #quoteMessage {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stroke Patient Helper</h1>
+
+        <!-- Progress Tracker -->
+        <div id="logForm">
+            <h2>Log Progress</h2>
+            <label for="dateInput">Date:</label>
+            <input type="date" id="dateInput">
+
+            <label for="exerciseInput">Exercise:</label>
+            <input type="text" id="exerciseInput" placeholder="Enter exercise">
+
+            <button onclick="logProgress()">Log</button>
+        </div>
+
+        <div id="progressLog">
+            <h2>Progress Log</h2>
+            <ul id="logList"></ul>
+        </div>
+
+        <!-- Exercise Helper -->
+        <div id="exerciseSuggestion">
+            <h2>Daily Exercise Suggestion</h2>
+            <p id="exerciseMessage">Loading...</p>
+            <button onclick="suggestRandomExercise()">Get Another Suggestion</button>
+        </div>
+
+        <div id="quoteOfTheDay">
+            <h2>Inspirational Quote of the Day</h2>
+            <p id="quoteMessage">Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        // Array to store progress log entries
+        let progressLog = [];
+
+        // Function to log progress
+        function logProgress() {
+            const dateInput = document.getElementById('dateInput').value;
+            const exerciseInput = document.getElementById('exerciseInput').value;
+
+            if (dateInput && exerciseInput) {
+                const logEntry = {
+                    date: dateInput,
+                    exercise: exerciseInput
+                };
+
+                progressLog.push(logEntry);
+                displayProgressLog();
+                clearInputFields();
+            } else {
+                alert('Please enter both date and exercise.');
+            }
+        }
+
+        // Function to display progress log entries
+        function displayProgressLog() {
+            const logList = document.getElementById('logList');
+            logList.innerHTML = ''; // Clear existing log entries
+
+            progressLog.forEach((entry, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${entry.date}: ${entry.exercise}`;
+                logList.appendChild(listItem);
+            });
+        }
+
+        // Function to clear input fields after logging
+        function clearInputFields() {
+            document.getElementById('dateInput').value = '';
+            document.getElementById('exerciseInput').value = '';
+        }
+
+        // Function to suggest a random exercise
+        function suggestRandomExercise() {
+            const exerciseSuggestions = [
+                "Gentle shoulder stretches",
+                "Finger and hand exercises",
+                "Leg raises while lying down",
+                "Ankle circles to improve flexibility",
+                "Standing balance exercises with support"
+            ];
+
+            const randomIndex = Math.floor(Math.random() * exerciseSuggestions.length);
+            const randomExercise = exerciseSuggestions[randomIndex];
+
+            const exerciseMessage = document.getElementById('exerciseMessage');
+            exerciseMessage.textContent = `Today's exercise suggestion: ${randomExercise}`;
+        }
+
+        // Function to display a random inspirational quote
+        function displayRandomQuote() {
+            const inspirationalQuotes = [
+                "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+                "Believe you can and you're halfway there. - Theodore Roosevelt",
+                "It does not matter how slowly you go as long as you do not stop. - Confucius",
+                "The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh"
+            ];
+
+            const randomIndex = Math.floor(Math.random() * inspirationalQuotes.length);
+            const randomQuote = inspirationalQuotes[randomIndex];
+
+            const quoteMessage = document.getElementById('quoteMessage');
+            quoteMessage.textContent = randomQuote;
+        }
+
+        // Call functions to display initial content on page load
+        displayProgressLog();
+        suggestRandomExercise();
+        displayRandomQuote();
+    </script>
+</body>
+</html>

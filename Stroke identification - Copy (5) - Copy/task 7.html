@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7: Word Scramble</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 80%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .scrambled-word {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 15px;
+            font-size: 18px;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            border: none;
+            border-radius: 8px;
+            background-color: #4caf50; /* Green button color */
+            color: #ffffff; /* White text color */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #388e3c; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Task 7: Word Scramble</h2>
+        <p>Unscramble the letters to form a word:</p>
+        <p class="scrambled-word" id="scrambledWord">RUTLSE</p>
+        <input type="text" id="userInputWord" placeholder="Enter your answer">
+        <button onclick="redirectToTask8()">Check Answer</button>
+    </div>
+
+    <script>
+        function redirectToTask8() {
+            // Redirect to Task 8 page
+            window.location.href = "file:///C:/Users/subis/OneDrive/Desktop/Stroke%20identification%20-%20Copy%20(2)/task%208.html";
+        }
+    </script>
+</body>
+</html>

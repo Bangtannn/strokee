@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1: Word Recall</title>
+    <style>
+        /* Center content and add padding */
+        body {
+            font-family: 'Roboto', sans-serif; /* Use Roboto font, commonly used in Android */
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5; /* Light background color */
+        }
+        /* Style for question and options */
+        .task-container {
+            max-width: 80%;
+            margin: 0 auto;
+            background-color: #ffffff; /* White container background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        }
+        .task-question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-button {
+            padding: 15px;
+            font-size: 18px;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            border: none;
+            border-radius: 8px;
+            background-color: #4caf50; /* Green button color */
+            color: #ffffff; /* White text color */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .option-button:hover {
+            background-color: #388e3c; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="task-container">
+        <h1>Task 1: Word Recall</h1>
+        <div class="task-question">
+            <p>Recall the word associated with the following clue:</p>
+            <p>Clue: Yellow fruit, starts with 'B'</p>
+        </div>
+        <div class="options-container">
+            <button class="option-button" onclick="redirectToTask2()">Banana</button>
+            <button class="option-button" onclick="redirectToTask2()">Orange</button>
+            <button class="option-button" onclick="redirectToTask2()">Apple</button>
+            <button class="option-button" onclick="redirectToTask2()">Pear</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToTask2() {
+            // Use window.location.href to navigate to task 2
+            window.location.href = "file:///C:/Users/subis/OneDrive/Desktop/Stroke%20identification%20-%20Copy%20(2)/task%202.html";
+        }
+    </script>
+</body>
+</html>
